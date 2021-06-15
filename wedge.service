@@ -1,0 +1,12 @@
+# Copyright (c) 2021 Riccardo Paolo Bestetti
+# configure tty and start wedge
+
+[Unit]
+Description=Configures /dev/tty_wedge and starts the wedge program on it
+
+[Service]
+Type=exec
+ExecStartPre=stty -F /dev/tty_wedge raw 57600
+ExecStart=sh -c 'wedge < /dev/tty_wedge'
+Restart=always
+

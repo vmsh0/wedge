@@ -1,0 +1,5 @@
+# Copyright (c) 2021 Riccardo Paolo Bestetti
+# symlink to /dev/tty_wedge and add systemd dependency to wedge service
+
+ACTION=="add", SUBSYSTEM=="tty", ENV{ID_VENDOR_ID}=="067b", ENV{ID_MODEL_ID}=="2303", SYMLINK+="tty_wedge", ENV{SYSTEMD_WANTS}+="wedge.service"
+
