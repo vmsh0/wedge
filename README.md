@@ -52,9 +52,9 @@ each 128 entries, corresponding to the 128 standard ASCII characters.
 The modifier key mechanism is intended for sending capital letters.
 
 The program supports a subset of the ASCII character set. In particular, it handles all alphanumeric
-characters, plus SPACE, DOT, COMMA and LINE FEED. It doesn't support anything else out of the box as
-most characters other than the ones mentioned depend on the keyboard layout configured in your
-terminal/desktop environment.
+characters, plus SPACE, DOT, COMMA, LINE FEED, and CARRIAGE RETURN. It doesn't support anything else
+out of the box as most characters other than the ones mentioned depend on the keyboard layout
+configured in your terminal/desktop environment.
 
 There are probably a few more ASCII characters that don't change between keyboard layouts (e.g.
 TAB). If these are needed for your application, please update the table and submit a pull request.
