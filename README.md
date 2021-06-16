@@ -43,8 +43,8 @@ with `modprobe uinput`).
 
 ## Translation tables
 
-The program uses two tables to translate between data from stdin to keyboard events. Those tables
-have each 128 entries, corresponding to the 128 standard ASCII characters.
+The program uses two tables to translate from ASCII characters to keyboard events. Those tables have
+each 128 entries, corresponding to the 128 standard ASCII characters.
 - `key_map`: translates between the nth character of the ASCII standard and a Linux keyboard event
 - `key_mod`: represents whether the nth character should be sent as an event with the modifier key
 - `key_mod[128]`: extra element representing the Linux keyboard event for the modifier key
@@ -52,8 +52,8 @@ have each 128 entries, corresponding to the 128 standard ASCII characters.
 The modifier key mechanism is intended for sending capital letters.
 
 The program supports a subset of the ASCII character set. In particular, it handles all alphanumeric
-characters, plus SPACE and LINE FEED. It doesn't support anything else out of the box as most
-characters other than the ones mentioned depend on the keyboard layout configured in your
+characters, plus SPACE, DOT, COMMA and LINE FEED. It doesn't support anything else out of the box as
+most characters other than the ones mentioned depend on the keyboard layout configured in your
 terminal/desktop environment.
 
 There are probably a few more ASCII characters that don't change between keyboard layouts (e.g.
@@ -81,7 +81,8 @@ see in `wedge.c`, and keep the code stupid-simple.
 
 Things that need to be worked on:
 
-- Support loading keyboard layouts (maybe we can parse xkb files?)
+- Support loading keyboard layouts (maybe we can parse xkb files? or kbd files might be easier but
+  less accurate)
 - Command line parameter to open files other than stdin
 
 ## License
